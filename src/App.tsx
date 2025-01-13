@@ -99,7 +99,7 @@ const App = () => {
                         &nbsp;Image to PDF
                     </h1>
                 </div>
-                <div className="flex ">
+                <div className="flex w-full justify-evenly md:w-[60%]">
                     <label
                         htmlFor="fileInput"
                         className={`bg-[#a6c8fe87] flex font-bold md:font-normal py-3 px-4 rounded-md cursor-pointer transition-all duration-150 hover:scale-105`}
