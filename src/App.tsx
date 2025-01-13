@@ -90,7 +90,7 @@ const App = () => {
             <div className="m-6 mb-9 pt-[6rem] md:px-6 relative flex flex-col justify-center items-center content-center flex-wrap  text-white w-[100%] lg:w-[900px] bg-[#ffffff2d] min-h-[85vh] rounded-3xl">
                 <div className="flex absolute top-[20px] right-[50%] translate-x-[50%]">
                     <img
-                        src="../public/logo.png"
+                        src="/assets/logo.png"
                         alt="logo"
                         className="w-10 h-auto"
                     />
