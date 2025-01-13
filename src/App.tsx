@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { IoCloudUploadOutline } from "react-icons/io5";
 import { FaRegFilePdf, FaGithub } from "react-icons/fa6";
+import { VscRefresh } from "react-icons/vsc";
 import jsPDF from "jspdf";
 
 const App = () => {
@@ -15,10 +16,14 @@ const App = () => {
             const fileArray = Array.from(files);
             setImages(fileArray);
         }
-        // console.log(images);
     };
     const handleFileName = (e: React.ChangeEvent<HTMLInputElement>) => {
         setFileName(e.target.value);
+    };
+    const handleReset = () => {
+        setImagesAdded(false);
+        setImages([]);
+        setFileName("");
     };
 
     const handleGeneratePdf = () => {
@@ -87,18 +92,14 @@ const App = () => {
     return (
         <>
             <div className=" fixed top-0 z-[-2] h-screen w-screen bg-[#000000] bg-[radial-gradient(#ffffff33_1px,#00091d_1px)] bg-[size:20px_20px]"></div>
-            <div className="m-6 mb-9 pt-[6rem] md:px-6 relative flex flex-col justify-center items-center content-center flex-wrap  text-white w-[100%] lg:w-[900px] bg-[#ffffff2d] min-h-[85vh] rounded-3xl">
+            <div className="m-6 mb-10 pt-[6rem] md:px-6 relative flex flex-col justify-center items-center content-center flex-wrap  text-white w-[100%] lg:w-[900px] bg-[#ffffff2d] min-h-[82vh] md:min-h-[90vh] rounded-3xl">
                 <div className="flex absolute top-[20px] right-[50%] translate-x-[40%] md:translate-x-[50%]">
-                    <img
-                        src="/logo.png"
-                        alt="logo"
-                        className="w-10 h-auto"
-                    />
+                    <img src="/logo.png" alt="logo" className="w-10 h-auto" />
                     <h1 className=" text-3xl font-extrabold md:font-semibold  whitespace-nowrap">
                         &nbsp;Image to PDF
                     </h1>
                 </div>
-                <div>
+                <div className="flex ">
                     <label
                         htmlFor="fileInput"
                         className={`bg-[#a6c8fe87] flex font-bold md:font-normal py-3 px-4 rounded-md cursor-pointer transition-all duration-150 hover:scale-105`}
@@ -114,6 +115,15 @@ const App = () => {
                         id="fileInput"
                         className="hidden"
                     />
+                    {imagesAdded && (
+                        <button
+                            onClick={handleReset}
+                            className="mx-[50px] py-0 px-3 bg-[#a6c8fe87] rounded-md"
+                            title="reset"
+                        >
+                            <VscRefresh size={25} />
+                        </button>
+                    )}
                 </div>
 
                 {imagesAdded && (
@@ -153,7 +163,7 @@ const App = () => {
                     </div>
                 )}
             </div>
-            <div className=" absolute text-[#8e8e8e] font-mono text-sm bottom-0 flex">
+            <div className=" absolute my-3 text-[#8e8e8e] font-mono text-sm bottom-0 flex">
                 <a
                     href="https://github.com/hasrku"
                     target="_blank"
