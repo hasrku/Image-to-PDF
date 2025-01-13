@@ -88,7 +88,7 @@ const App = () => {
         <>
             <div className=" fixed top-0 z-[-2] h-screen w-screen bg-[#000000] bg-[radial-gradient(#ffffff33_1px,#00091d_1px)] bg-[size:20px_20px]"></div>
             <div className="m-6 mb-9 pt-[6rem] md:px-6 relative flex flex-col justify-center items-center content-center flex-wrap  text-white w-[100%] lg:w-[900px] bg-[#ffffff2d] min-h-[85vh] rounded-3xl">
-                <div className="flex absolute top-[20px] right-[50%] translate-x-[50%]">
+                <div className="flex absolute top-[20px] right-[50%] translate-x-[40%] md:translate-x-[50%]">
                     <img
                         src="/logo.png"
                         alt="logo"
