@@ -118,7 +118,7 @@ const App = () => {
                     {imagesAdded && (
                         <button
                             onClick={handleReset}
-                            className="mx-[50px] py-0 px-3 bg-[#a6c8fe87] rounded-md"
+                            className=" py-0 px-3 bg-[#a6c8fe87] rounded-md"
                             title="reset"
                         >
                             <VscRefresh size={25} />
